@@ -1,0 +1,29 @@
+<body style="background-color:powderblue">
+<center>
+<h1>New user Creation</h1>
+<div border>
+<%= form_for :user do |f| %>
+<p>
+	<%= f.label :first_name %><br>
+	<%= f.text_field :firstname %>
+</p>
+<p>
+	<%= f.label :last_name %><br>
+	<%= f.text_field :lastname %>
+</p>
+<p>
+	<%= f.label :email %><br>
+	<%= f.text_field :email %>
+</p>
+<p>
+	<%= f.label :password %><br>
+	<%= f.password_field :password %>
+
+</p>
+<p>
+	<%= f.submit %>
+</p>
+<% end %>
+</div>
+</center>
+</body>
