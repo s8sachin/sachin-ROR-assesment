@@ -11,6 +11,13 @@ Rails.application.routes.draw do
   put "/user/:id/edit" => "users#update", as: :user_update
   get "/user/:id" => "users#show", as: :user_show
   delete "/user/:id" => "users#destroy", as: :user_destroy
+
+  get "/project/new" => "projects#new", as: :project_new
+  post "/project/new" => "projects#create", as: :project_create
+  get "/projects/list" => "projects#index", as: :projects_list
+  get "/project/:id" => "projects#show", as: :project_show
+
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

@@ -1,28 +1,42 @@
 <body style="background-color:powderblue">
 <center>
 <h1>New user Creation</h1>
-<div border>
+
+<div >
+
 <%= form_for :user do |f| %>
-<p>
+
+<div >
+  
+<p class='error'>
 	<%= f.label :first_name %><br>
-	<%= f.text_field :firstname %>
+	<%= f.text_field :firstname %> 
+  <%= show_errors(@user, :firstname) %>
+	
 </p>
-<p>
+<p class='error'>
 	<%= f.label :last_name %><br>
 	<%= f.text_field :lastname %>
+  <%= show_errors(@user, :lastname) %>
+
 </p>
-<p>
+<p class='error'>
 	<%= f.label :email %><br>
-	<%= f.text_field :email %>
+	<%= f.email_field :email %>
+  <%= show_errors(@user, :email) %>
+
 </p>
-<p>
+<p >
 	<%= f.label :password %><br>
 	<%= f.password_field :password %>
+ <%= show_errors(@user, :password) %>
+
 
 </p>
 <p>
 	<%= f.submit %>
 </p>
+</div>
 <% end %>
 </div>
 </center>

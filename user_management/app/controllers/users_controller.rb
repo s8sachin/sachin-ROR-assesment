@@ -4,9 +4,13 @@ class UsersController < ApplicationController
 	end
 	def create
 		@user=User.new(user_params)
-		@user.save
-		# binding.pry
-		redirect_to users_list_path
+		if @user.save
+			redirect_to users_list_path
+		  else
+		    render 'new'
+		  end
+
+		
 	end
 	def index
 		@users=User.all
